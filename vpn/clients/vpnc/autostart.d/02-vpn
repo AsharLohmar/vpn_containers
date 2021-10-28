@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ -f /conf/vpn.conf ]; then
+	vpnc --no-detach /conf/vpn.conf
+else
+	echo "Missing conf file"
+fi
+

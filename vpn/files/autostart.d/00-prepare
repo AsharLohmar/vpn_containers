@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+if [ -f "/conf/.hosts" ]; then
+	cat "/conf/.hosts" >> /etc/hosts
+fi
+if [ -f "/conf/.motd" ]; then
+	cat "/conf/.motd"
+fi

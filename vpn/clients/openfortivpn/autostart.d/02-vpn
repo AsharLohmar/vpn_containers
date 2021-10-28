@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ -f /conf/vpn.conf ]; then
+    /openfortivpn -c /conf/vpn.conf
+else
+    echo "Missing conf file"
+fi
