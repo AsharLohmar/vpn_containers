@@ -1,0 +1,14 @@
+#!/bin/sh
+
+[ ! -c /dev/net/tun ] && ( mkdir -p /dev/net && mknod /dev/net/tun c 10 200 )
+
+if [ -f /conf/vpn.conf ]; then
+	if [ -f /conf/vpn.passwd ]; then
+		openconnect --config=/conf/vpn.conf --passwd-on-stdin < /conf/vpn.passwd
+	else
+		openconnect --config=/conf/vpn.conf
+	fi
+else
+	echo "Missing conf file"
+fi
+

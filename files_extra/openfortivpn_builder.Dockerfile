@@ -3,7 +3,7 @@ FROM alpine:latest
 ARG OPENFORTIVPN_VERSION
 
 RUN \
-  apk update && apk upgrade && \
+  apk upgrade --no-cache -l --prune -a --purge   && \
   apk add --no-cache autoconf automake build-base ca-certificates curl git openssl-dev ppp && \
   update-ca-certificates && \
   # build openfortivpn
