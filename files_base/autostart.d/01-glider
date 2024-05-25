@@ -1,0 +1,7 @@
+#!/bin/sh
+
+CONFIG_FILE="/glider.conf"
+if [ -f "/conf/glider.conf" ]; then
+    CONFIG_FILE="/conf/glider.conf"
+fi
+/glider -config "${CONFIG_FILE}" &
